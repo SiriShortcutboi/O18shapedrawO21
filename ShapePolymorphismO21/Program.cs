@@ -4,20 +4,21 @@ public class Program
 {
     public static void Main()
     {
-    
-       
-            Circle circle = new Circle();
-            Square square = new Square();
-            Triangle triangle = new Triangle();
-       
-        
-            Console.WriteLine(circle.Draw()); 
-            Console.WriteLine(triangle.Draw()); 
-            Console.WriteLine(square.Draw()); 
+        Shape[] shapes = new Shape[]
+        {
+            new Circle(),
+            new Square(),
+            new Triangle()
+        };
 
+        foreach (Shape shape in shapes)
+        {
+            Console.WriteLine(shape.Draw()); //the method call inside the writeline 
+            // stays generic because the name is replaced each time, 
+            // using the list loop keeps you from copy pasting for each shape
         }
     }
-
+}
 
 public abstract class Shape
 {
